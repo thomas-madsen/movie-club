@@ -6,13 +6,13 @@ import json
 import simplejson
 import plotly.express as px
 import datetime
+import os
 
 
 """
 # TDI Milestone Project
 An interactive chart of stock closing prices using Streamlit and Plotly.
 """
-
 years = np.arange(2010,2022,1)
 months = np.arange(1,13,1)
 st.sidebar.header("Select plot parameters:")
@@ -29,7 +29,7 @@ month_option = st.sidebar.selectbox(
     'Month:',
     months)
 
-key = 'IWEYJMS21GRAK6FN'
+key = os.environ.get('key')
 url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&outputsize=full&symbol={}&apikey={}'.format(ticker, key)
 response_json = requests.get(url).json()
 

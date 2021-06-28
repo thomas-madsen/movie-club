@@ -46,7 +46,7 @@ fig = px.line(filtered_df, x='date', y='price')
 
 fig.update_layout(title='{} Closing Price, {}/{}'.format(ticker, month_option, year_option),
                    xaxis_title='Date',
-                   yaxis_title='Closing Price (USD)',
+                   yaxis_title='(Adjusted) Closing Price (USD)',
                    showlegend=False)
 
 st.plotly_chart(fig)

@@ -10,8 +10,8 @@ import os
 
 
 """
-# TDI Milestone Project
-An interactive chart of stock closing prices using Streamlit and Plotly.
+# Movie Club Recommender
+An interactive app for movie clubs. Recommends *new* movies which all members are likely to enjoy.
 """
 years = np.arange(2010,2022,1)
 months = np.arange(1,13,1)

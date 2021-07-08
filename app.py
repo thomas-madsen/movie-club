@@ -13,26 +13,29 @@ import os
 An interactive app for movie clubs. Recommends *new* movies which all members are likely to enjoy.
 """
 
-st.subheader("List a few of your favorite movies!")
-cols = st.beta_columns(3)
+st.sidebar.header("Tell us about your group:")
+members = range(2,10)
+members_option = st.sidebar.selectbox('Number of Watchers:', members, index=3)
 
-cols[0].text_input("Watcher 1","")
+st.subheader("List a few of your favorite movies!")
+cols = st.beta_columns(members_option)
+
+movie_1_1 = cols[0].text_input("Watcher 1","")
 cols[1].text_input("Watcher 2","")
 cols[2].text_input("Watcher 3","")
 
-for i in range(1,4):
+for i in range(0,4):
     cols[0].text_input("", "", key = "watcher1movie"+str(i))
     cols[1].text_input("", "", key = "watcher2movie"+str(i))
     cols[2].text_input("", "", key = "watcher3movie"+str(i))
 
-members = np.arange(2,10,1)
-st.sidebar.header("Tell us about your group:")
-
-members_option = st.sidebar.selectbox(
-    'Number of Watchers:',
-    members)
-
-
+if movie_1_1 == "Toy Story":
+    st.subheader("Our suggestions:")
+    st.write("[The Mitchells vs. The Machines (2021)](https://letterboxd.com/film/the-mitchells-vs-the-machines/)")
+    st.write("[Soul (2020)](https://letterboxd.com/film/soul-2020/)")
+    st.write("[Onward (2020)](https://letterboxd.com/film/onward-2020/)")
+    st.write("[Nomadland (2020)](https://letterboxd.com/film/nomadland/)")
+    st.write("[Anomalisa (2015)](https://letterboxd.com/film/anomalisa/)")
 
 #key = os.environ.get('key')
 #url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&outputsize=full&symbol={}&apikey={}'.format(ticker, key)

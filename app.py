@@ -11,6 +11,7 @@ import os
 """
 # Movie Club Recommender
 An interactive recommender of *new* movies which all members are likely to enjoy.
+Data from Letterboxd and MovieLens. Powered by Streamlit and Heroku.
 """
 
 st.sidebar.header("Tell us about your group:")

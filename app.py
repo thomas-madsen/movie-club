@@ -20,10 +20,10 @@ cols[0].text_input("Watcher 1","")
 cols[1].text_input("Watcher 2","")
 cols[2].text_input("Watcher 3","")
 
-for i in range(3):
-    cols[0].text_input("", "")
-    cols[1].text_input("", "")
-    cols[2].text_input("", "")
+for i in range(1,4):
+    cols[0].text_input("", "", key = "watcher1movie"+str(i))
+    cols[1].text_input("", "", key = "watcher2movie"+str(i))
+    cols[2].text_input("", "", key = "watcher3movie"+str(i))
 
 members = np.arange(2,10,1)
 st.sidebar.header("Tell us about your group:")

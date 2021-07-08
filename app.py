@@ -10,12 +10,12 @@ import os
 
 """
 # Movie Club Recommender
-An interactive app for movie clubs. Recommends *new* movies which all members are likely to enjoy.
+An interactive recommender of *new* movies which all members are likely to enjoy.
 """
 
 st.sidebar.header("Tell us about your group:")
 members = range(2,10)
-members_option = st.sidebar.selectbox('Number of Watchers:', members, index=3)
+members_option = st.sidebar.selectbox('Number of Watchers:', members, index=1)
 
 st.subheader("List a few of your favorite movies!")
 cols = st.beta_columns(members_option)

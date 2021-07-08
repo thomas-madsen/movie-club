@@ -13,23 +13,26 @@ import os
 An interactive app for movie clubs. Recommends *new* movies which all members are likely to enjoy.
 """
 
-years = np.arange(2010,2022,1)
-months = np.arange(1,13,1)
-st.sidebar.header("Select plot parameters:")
+st.subheader("List a few of your favorite movies!")
+cols = st.beta_columns(3)
 
-ticker = st.sidebar.text_input(
-    'Ticker (e.g. AAPL):',
-    'AAPL')
+cols[0].text_input("Watcher 1","")
+cols[1].text_input("Watcher 2","")
+cols[2].text_input("Watcher 3","")
 
-year_option = st.sidebar.selectbox(
-    'Year:',
-    years)
+for i in range(3):
+    cols[0].text_input("", "")
+    cols[1].text_input("", "")
+    cols[2].text_input("", "")
 
-month_option = st.sidebar.selectbox(
-    'Month:',
-    months)
+members = np.arange(2,10,1)
+st.sidebar.header("Tell us about your group:")
 
-st.text_area("Watcher #1", "")
+members_option = st.sidebar.selectbox(
+    'Number of Watchers:',
+    members)
+
+
 
 #key = os.environ.get('key')
 #url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&outputsize=full&symbol={}&apikey={}'.format(ticker, key)
